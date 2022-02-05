@@ -1,7 +1,9 @@
+import * as S from './styles'
+
 type ButtonProps = {
   children: React.ReactNode
 }
 
 export function Button({ children }: ButtonProps) {
-  return <button>{children}</button>
+  return <S.Container>{children}</S.Container>
 }

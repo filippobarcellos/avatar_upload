@@ -13,6 +13,9 @@ const theme = {
     white: {
       100: '#FFFFFF',
     },
+    blue: {
+      100: '#3F80FF',
+    },
   },
 }
 
