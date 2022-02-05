@@ -1,7 +1,12 @@
+import { ThemeProvider } from 'styled-components'
+
+import Home from './pages/Home'
+import theme from './styles/theme'
+
 export default function App() {
   return (
-    <div>
-      <h1>Avatar Upload</h1>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   )
 }
