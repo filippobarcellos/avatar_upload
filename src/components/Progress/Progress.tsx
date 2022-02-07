@@ -74,9 +74,12 @@ export function Progress() {
           step={0.1}
           value={zoom}
           onChange={(e, zoom) => setZoom(zoom)}
+          aria-label='slider'
         />
         <S.ButtonContainer>
-          <Button onClick={onSave}>Save</Button>
+          <Button onClick={onSave} aria-label='save button'>
+            Save
+          </Button>
         </S.ButtonContainer>
       </S.Content>
     </S.Container>

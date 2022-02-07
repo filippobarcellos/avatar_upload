@@ -5,6 +5,10 @@ type ButtonProps = {
   onClick: () => void
 }
 
-export function Button({ children, onClick }: ButtonProps) {
-  return <S.Container onClick={onClick}>{children}</S.Container>
+export function Button({ children, onClick, ...props }: ButtonProps) {
+  return (
+    <S.Container onClick={onClick} {...props}>
+      {children}
+    </S.Container>
+  )
 }

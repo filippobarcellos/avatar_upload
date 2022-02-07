@@ -9,7 +9,7 @@ export function CancelButton() {
   const onResetUpload = () => setReset()
 
   return (
-    <S.Container onClick={onResetUpload}>
+    <S.Container onClick={onResetUpload} aria-label='close-button'>
       <MdClose size={16} color={theme.colors.gray[200]} />
     </S.Container>
   )

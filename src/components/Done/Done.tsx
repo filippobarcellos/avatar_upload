@@ -7,7 +7,6 @@ import * as S from './styles'
 export function Done() {
   const { image } = useCropAvatar()
 
-  console.log(image)
   return (
     <S.Container>
       <S.Avatar src={image} />
