@@ -13,7 +13,7 @@ export function Error() {
     <S.Container>
       <CancelButton />
       <S.Avatar>
-        <img src={error} />
+        <img src={error} alt='avatar' />
       </S.Avatar>
 
       <S.Content>

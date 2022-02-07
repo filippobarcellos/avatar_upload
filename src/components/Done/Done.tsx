@@ -9,7 +9,7 @@ export function Done() {
 
   return (
     <S.Container>
-      <S.Avatar src={image} />
+      <S.Avatar src={image} alt='avatar' />
       <S.Content>
         <S.Row>
           <FaImage size={16} color={theme.colors.gray[300]} />

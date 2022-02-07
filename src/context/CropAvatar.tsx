@@ -14,13 +14,13 @@ type CropAvatarContextData = {
   onImageSave: (image: any) => void
 }
 
-type CropAvatarProvider = {
+type CropAvatarProviderProps = {
   children: React.ReactNode
 }
 
 const CropAvatarContext = createContext({} as CropAvatarContextData)
 
-const CropAvatarProvider = ({ children }: CropAvatarProvider) => {
+const CropAvatarProvider = ({ children }: CropAvatarProviderProps) => {
   const [rawImage, setRawImage] = useState('')
   const [image, setImage] = useState()
   const [status, setStatus] = useState<Status>('lde')
