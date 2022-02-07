@@ -12,7 +12,7 @@ Foi utilizado as seguintes ferramentas nesse projeto:
 
 É uma aplicação web utilizada para cortar o tamanho de imagens e fazer o download da mesma
 
-[ver online](https://avatar-upload-r15gt5gyn-filippobarcellos.vercel.app/)
+[ver online](https://avatar-upload-ikd10qty8-filippobarcellos.vercel.app/)
 
 ## Observaçōes
 
