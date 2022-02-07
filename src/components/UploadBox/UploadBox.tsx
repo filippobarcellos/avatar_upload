@@ -1,3 +1,4 @@
+import { useCropAvatar } from '../../context/CropAvatar'
 import * as S from './styles'
 
 type UploadBoxProps = {
@@ -5,5 +6,9 @@ type UploadBoxProps = {
 }
 
 export function UploadBox({ children }: UploadBoxProps) {
-  return <S.Container>{children}</S.Container>
+  const { status } = useCropAvatar()
+
+  const hideBorder = status === 'progress' || status === 'error'
+
+  return <S.Container hideBorder={hideBorder}>{children}</S.Container>
 }

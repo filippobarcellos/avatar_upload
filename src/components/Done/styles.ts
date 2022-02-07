@@ -20,7 +20,8 @@ export const Avatar = styled.img`
   width: 114px;
   height: 114px;
   border-radius: 57px;
-  background-color: pink;
+  object-fit: 'cover';
+  aspect-ratio: '1/1';
 `
 
 export const Row = styled.div`
