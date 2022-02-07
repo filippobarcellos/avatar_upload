@@ -16,6 +16,14 @@ export const Content = styled.div`
   text-align: center;
   flex: 1;
 `
+export const Input = styled.input`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+`
+
 export const Avatar = styled.img`
   width: 114px;
   height: 114px;

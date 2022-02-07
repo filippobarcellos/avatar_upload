@@ -5,11 +5,12 @@ import theme from '../../styles/theme'
 import * as S from './styles'
 
 export function Done() {
-  const { image } = useCropAvatar()
+  const { image, onSelectFile } = useCropAvatar()
 
   return (
     <S.Container>
       <S.Avatar src={image} alt='avatar' />
+      <S.Input type='file' onChange={onSelectFile} />
       <S.Content>
         <S.Row>
           <FaImage size={16} color={theme.colors.gray[300]} />

@@ -1,6 +1,8 @@
 import { useState, useCallback, useContext, createContext } from 'react'
+import { validFileExtensions } from '../utils/constants'
 
 type Status = 'lde' | 'progress' | 'error' | 'done'
+type Event = React.ChangeEvent<HTMLInputElement>
 
 type CropAvatarContextData = {
   image: any
@@ -10,8 +12,8 @@ type CropAvatarContextData = {
   setProgress: () => void
   setError: () => void
   setDone: () => void
-  onRawImageSave: (image: string) => void
   onImageSave: (image: any) => void
+  onSelectFile: (event: Event) => void
 }
 
 type CropAvatarProviderProps = {
@@ -49,6 +51,26 @@ const CropAvatarProvider = ({ children }: CropAvatarProviderProps) => {
     setImage(image)
   }
 
+  const onSelectFile = (event: Event) => {
+    if (event.target && event.target.files && event.target.files.length > 0) {
+      const invalidFile = !validFileExtensions.includes(
+        event.target.files[0].type
+      )
+
+      if (invalidFile) {
+        setError()
+        return
+      }
+
+      setProgress()
+      const reader = new FileReader()
+      reader.readAsDataURL(event.target.files[0])
+      reader.addEventListener('load', () => {
+        onRawImageSave(reader.result as string)
+      })
+    }
+  }
+
   const values = {
     image,
     rawImage,
@@ -57,8 +79,8 @@ const CropAvatarProvider = ({ children }: CropAvatarProviderProps) => {
     setError,
     setDone,
     setProgress,
-    onRawImageSave,
     onImageSave,
+    onSelectFile,
   }
 
   return (
